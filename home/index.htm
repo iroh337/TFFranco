@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TFFRANCO</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 300px;
+    }
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #0074D9;
+    }
+    input {
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div> 
+    <a id="link_andre" target="_blank" href="">Andre Braga</a>
+    <input type="url" id="id_andre" placeholder="Cole o link aqui">
+
+    <a id="link_claudio" target="_blank" href="">Claudio Silva</a>
+    <input type="url" id="id_claudio" placeholder="Cole o link aqui">
+
+    <a id="link_denilson" target="_blank" href="">Denilson Gama</a>
+    <input type="url" id="id_denilson" placeholder="Cole o link aqui">
+
+    <a id="link_gonzalo" target="_blank" href="">Gonzalo Alves</a>
+    <input type="url" id="id_gonzalo" placeholder="Cole o link aqui">
+
+    <a id="link_guylherme" target="_blank" href="">Guylherme Santos</a>
+    <input type="url" id="id_guylherme" placeholder="Cole o link aqui">
+
+    <a id="link_higor" target="_blank" href="">Higor Melo</a>
+    <input type="url" id="id_higor" placeholder="Cole o link aqui">
+
+    <a id="link_hugo" target="_blank" href="">Hugo Freitas</a>
+    <input type="url" id="id_hugo" placeholder="Cole o link aqui">
+
+    <a id="link_julio" target="_blank" href="">Julio Neves</a>
+    <input type="url" id="id_julio" placeholder="Cole o link aqui">
+
+    <a id="link_paulo" target="_blank" href="">Paulo Brito</a>
+    <input type="url" id="id_paulo" placeholder="Cole o link aqui">
+
+    <a id="link_thiago" target="_blank" href="">Thiago Souza</a>
+    <input type="url" id="id_thiago" placeholder="Cole o link aqui">
+
+    <a id="link_william" target="_blank" href="">William Porto</a>
+    <input type="url" id="id_william" placeholder="Cole o link aqui">
+
+    <h2>SUL</h2>
+
+    <a id="link_ageu" target="_blank" href="">Ageu Medeiros</a>
+    <input type="url" id="id_ageu" placeholder="Cole o link aqui">
+  </div>
+
+  <script>
+    const nomes = [
+      "andre", "claudio", "denilson", "gonzalo",
+      "guylherme", "higor", "hugo", "julio",
+      "paulo", "thiago", "william", "ageu"
+    ];
+
+    nomes.forEach(nome => {
+      const input = document.getElementById(`id_${nome}`);
+      const link = document.getElementById(`link_${nome}`);
+
+      // Carrega link salvo do localStorage (se existir)
+      const savedUrl = localStorage.getItem(`url_${nome}`);
+      if (savedUrl) {
+        link.href = savedUrl;
+        input.value = savedUrl;
+      }
+
+      // Atualiza o link e salva no localStorage quando o valor mudar
+      input.addEventListener("input", () => {
+        const newUrl = input.value.trim();
+        link.href = newUrl;
+        localStorage.setItem(`url_${nome}`, newUrl);
+      });
+    });
+  </script>
+</body>
+</html>
