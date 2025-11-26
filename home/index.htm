@@ -10,6 +10,8 @@
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       padding: 20px;
+      display: flex;
+      gap: 100px;
     }
     div {
       display: flex;
@@ -31,6 +33,7 @@
 </head>
 <body>
   <div> 
+    <h2>NORTE</h2>
     <a id="link_andre" target="_blank" href="">Andre Braga</a>
     <input type="url" id="id_andre" placeholder="Cole o link aqui">
 
@@ -64,17 +67,21 @@
     <a id="link_william" target="_blank" href="">William Porto</a>
     <input type="url" id="id_william" placeholder="Cole o link aqui">
 
+    
+  </div>
+  <div>
     <h2>SUL</h2>
-
     <a id="link_ageu" target="_blank" href="">Ageu Medeiros</a>
     <input type="url" id="id_ageu" placeholder="Cole o link aqui">
-  </div>
 
+    <a id="link_breno" target="_blank" href="">Breno Nascimento</a>
+    <input type="url" id="id_breno" placeholder="Cole o link aqui">
+  </div>
   <script>
     const nomes = [
       "andre", "claudio", "denilson", "gonzalo",
       "guylherme", "higor", "hugo", "julio",
-      "paulo", "thiago", "william", "ageu"
+      "paulo", "thiago", "william", "ageu","breno"
     ];
 
     nomes.forEach(nome => {
